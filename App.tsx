@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
-import { Entypo, FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Entypo, FontAwesome, MaterialCommunityIcons} from '@expo/vector-icons'
 
 interface IBaby {
   name: string;
@@ -30,7 +29,6 @@ const registeredBaby: IBaby = {
   name: 'Ryan',
   age: '15 days'
 }
-
 const nursingActivity: INursingActivity = {
   name: 'nursing',
   lastTime: '10 minutes ago',
@@ -39,15 +37,15 @@ const nursingActivity: INursingActivity = {
 }
 const diaperActivity: IDiaperActivity = {
   name: 'diaper',
-  lastTime: '10 minutes ago',
-  lastTimeInfo: 'Formula 100ml',
-  daySummary: '2 times 300ml'
+  lastTime: '30 minutes ago',
+  lastTimeInfo: 'Wet',
+  daySummary: '2 times'
 }
 const sleepActivity: ISleepActivity = {
   name: 'sleep',
-  lastTime: '10 minutes ago',
-  lastTimeInfo: 'Formula 100ml',
-  daySummary: '2 times 300ml'
+  lastTime: '2 hours ago',
+  lastTimeInfo: '',
+  daySummary: '4 times 8 hours'
 }
 
 const DefaultPicture = require('./assets/Baby.png')
@@ -105,13 +103,13 @@ export default function App() {
         <View style={styles.nursingContainer}>
           <View style={styles.nurseButtonContainer}>
             <Pressable onPress={onOpenNursing}>
-              <MaterialCommunityIcons name="baby-bottle" size={60} color="orange" />
+              <MaterialCommunityIcons name="human-baby-changing-table" size={60} color="green"/>
             </Pressable>
           </View>
           <View style={styles.nursingInfoContainer}>
-            <Text style={{fontWeight: 'bold', fontSize: 20}}>{nursingActivity.lastTime}</Text>
-            <Text style={{fontWeight: '400', fontSize: 16}}>{nursingActivity.lastTimeInfo}</Text>
-            <Text style={{fontWeight: '400', fontSize: 16}}>{nursingActivity.daySummary}</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 20}}>{diaperActivity.lastTime}</Text>
+            <Text style={{fontWeight: '400', fontSize: 16}}>{diaperActivity.lastTimeInfo}</Text>
+            <Text style={{fontWeight: '400', fontSize: 16}}>{diaperActivity.daySummary}</Text>
           </View>
           <View>
 
@@ -120,13 +118,13 @@ export default function App() {
         <View style={styles.nursingContainer}>
           <View style={styles.nurseButtonContainer}>
             <Pressable onPress={onOpenNursing}>
-              <MaterialCommunityIcons name="baby-bottle" size={60} color="orange" />
+              <MaterialCommunityIcons name="sleep" size={60} color="blue"/>
             </Pressable>
           </View>
           <View style={styles.nursingInfoContainer}>
-            <Text style={{fontWeight: 'bold', fontSize: 20}}>{nursingActivity.lastTime}</Text>
-            <Text style={{fontWeight: '400', fontSize: 16}}>{nursingActivity.lastTimeInfo}</Text>
-            <Text style={{fontWeight: '400', fontSize: 16}}>{nursingActivity.daySummary}</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 20}}>{sleepActivity.lastTime}</Text>
+            <Text style={{fontWeight: '400', fontSize: 16}}>{sleepActivity.lastTimeInfo}</Text>
+            <Text style={{fontWeight: '400', fontSize: 16}}>{sleepActivity.daySummary}</Text>
           </View>
           <View>
 
